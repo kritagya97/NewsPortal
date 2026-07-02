@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+
+    <div class="container">
+
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold" href="{% url 'home' %}">
+            News Portal
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+
+            <!-- Left Menu -->
+            <ul class="navbar-nav me-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link " href="{% url 'home' %}">
+                        Recent
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'business' %}">
+                        Business
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'politics' %}">
+                        Politics
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'technology' %}">
+                        Technology
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url  'sports' %}">
+                        Sports
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'entertainment' %}">
+                        Entertainment
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- Search Form by using Title -->
+            <form method="GET" action="{% url 'search' %}" class="d-flex">
+
+                <input type="text" name="q" class="form-control me-2" placeholder="Search">
+
+                <button class="btn btn-success">
+                    Search
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</nav>

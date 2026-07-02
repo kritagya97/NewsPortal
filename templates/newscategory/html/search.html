@@ -1,0 +1,65 @@
+{% extends "base/html/base.html" %}
+
+{% block title %}
+Search
+{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">
+
+    Search Results
+
+    {% if query %}
+    for "{{ query }}"
+    {% endif %}
+
+</h2>
+
+{% for article in news %}
+
+<div class="card shadow-sm mb-4">
+
+    {% if article.image %}
+    <img src="{{ article.image.url }}" class="card-img-top" alt="{{ article.title }}">
+    {% endif %}
+
+    <div class="card-body">
+
+        <span class="badge bg-primary">
+            {{ article.category }}
+        </span>
+
+        <h3 class="mt-3">
+            {{ article.title }}
+        </h3>
+
+        <p>
+            {{ article.content|truncatewords:25 }}
+        </p>
+
+        <small class="text-muted">
+            {{ article.created_at|date:"F d, Y" }}
+        </small>
+
+        <div class="mt-3">
+            <a href="{% url 'news_detail' article.id %}" class="btn btn-primary">
+                Read More
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+{% empty %}
+
+<div class="alert alert-warning">
+
+    No news found.
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

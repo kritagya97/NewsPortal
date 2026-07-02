@@ -1,0 +1,36 @@
+<!-- {% extends "base/html/base.html" %}
+
+{% block content %}
+
+<h2>{{ category.name }} News</h2>
+
+{% for article in news %}
+
+<div class="card mb-3">
+
+    {% if article.image %}
+    <img src="{{ article.image.url }}" class="card-img-top">
+    {% endif %}
+
+    <div class="card-body">
+
+        <h3>{{ article.title }}</h3>
+
+        <p>{{ article.content|truncatewords:30 }}</p>
+
+        <p>
+            <strong>Category:</strong>
+            {{ article.category }}
+        </p>
+
+    </div>
+
+</div>
+
+{% empty %}
+
+<h4>No News Available</h4>
+
+{% endfor %}
+
+{% endblock %} -->
